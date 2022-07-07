@@ -14,3 +14,13 @@ git reset --hard HEAD~100    回到100个版本前
 git diff gitmingling.txt            查询增加的内容
 cat document.txt                    再来查看下 readme.txt内容
 git reflog 		               获取版本号
+git reset --hard 版本号 退回相应的版本号
+git checkout document.txt  可以丢弃工作区的修改（未add和commit，然后取消修改）
+	等同效果	           把document.txt文件在工作区做的修改全部撤销
+git restore document.txt     可以丢弃工作区的修改
+
+git add b.txt
+git commit -m "添加b.txt"
+rm b.txt            delete删除b.txt文件
+在删除之后并未commit，还可以恢复删除的文件
+git restore b.txt / git checkout b.txt
