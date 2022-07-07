@@ -1,0 +1,16 @@
+$ git config  --global user.name "yagering"
+$ git config  --global user.email "zya21320@gmail.com"
+git init
+cd :D
+cd git
+cd git1
+pwd 命令是用于显示当前的目录
+git add gitmingling.txt
+git status
+git commit -m "git命令"
+git log
+git reset --hard HEAD^          一个^回到上一个版本
+git reset --hard HEAD~100    回到100个版本前
+git diff gitmingling.txt            查询增加的内容
+cat document.txt                    再来查看下 readme.txt内容
+git reflog 		               获取版本号
