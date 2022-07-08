@@ -46,5 +46,6 @@ git merge dev ---在master分支上合并dev分支内容
 注意到上面的Fast-forward信息，Git告诉我们，这次合并是“快进模式”，也就是直接把master指向dev的当前提交，所以合并速度非常快。
 
 合并完成后，我们可以接着删除dev分支了
+git branch -d dev
 
 
