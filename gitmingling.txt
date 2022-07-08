@@ -25,7 +25,26 @@ rm b.txt            delete删除b.txt文件
 在删除之后并未commit，还可以恢复删除的文件
 git restore b.txt / git checkout b.txt
 
-本地和远程建立连接
+本地和远程建立连接-本地文件上传到远程进行备份
 $ git remote add origin https://github.com/yagering/git1.git
-我们第一次推送master分支时，加上了 –u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
+我们第一次推送master分支时，加上了 –u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。-以后添加后的简化命令git push origin master
 $ git push -u origin master
+
+远程和本地建立连接-以便把远程文件克隆到本地
+1.创建git2仓库-并自动生成readme.md文件
+2.git clone https://github.com/yagering/git2.git --使用命令克隆一个本地仓库
+
+创建与合并分支
+在版本回填退里，你已经知道，每次提交，Git都把它们串成一条时间线，这条时间线就是一个分支。截止到目前，只有一条时间线，在Git里，这个分支叫主分支，即master分支。HEAD严格来说不是指向提交，而是指向master，master才是指向提交的，所以，HEAD指向的就是当前分支。
+1.创建dev分支，然后切换到dev分支上。
+git checkout -b dev 创建并切换分支---git checkout 命令加上 –b参数表示创建并切换，相当于如下2条命令 git branch dev---- git checkout dev
+git branch 查看当前的分支,会列出所有的分支，当前分支前面会添加一个星号。
+
+git checkout master/dev  切换分支master/dev---cat document.txt
+现在我们可以把dev分支上的内容合并到分支master上了
+git merge dev ---在master分支上合并dev分支内容
+注意到上面的Fast-forward信息，Git告诉我们，这次合并是“快进模式”，也就是直接把master指向dev的当前提交，所以合并速度非常快。
+
+合并完成后，我们可以接着删除dev分支了
+
+
