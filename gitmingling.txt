@@ -86,6 +86,7 @@ git merge --no-ff -m "merge bug fix 404" issue-404合并分支issue-404内容
 git branch -d issue-404
 现在，我们回到master上干活了。--找回现场隐藏的工作。
 git stash list 查看隐藏的工作列表。
+
 git stash //暂存正在进行的工作
 git pull
 git stash pop //合并暂存的代码
