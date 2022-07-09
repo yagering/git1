@@ -48,4 +48,14 @@ git merge dev ---在master分支上合并dev分支内容
 合并完成后，我们可以接着删除dev分支了
 git branch -d dev
 
+如何解决冲突？
+fenzhi1--分支增加888888
+master--主支增加999999
+合并分支发生冲突
+git merge fenzhi1
+cat document.txt--Git用<<<<<<<，=======，>>>>>>>标记出不同分支的内容，其中<<<HEAD是指主分支修改的内容，>>>>>fenzhi1 是指fenzhi1上修改的内容，我们可以修改下如下后保存：
+需要更改成正常、master分支内容一样，不然无法切换分支
+git add document.txt
+git commit -m "conflict fixed"
+执行以上代码后模式由master|merging--> master---并可以切换分支。
 
